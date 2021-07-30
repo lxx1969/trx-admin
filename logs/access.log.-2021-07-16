@@ -1,0 +1,32 @@
+[2021-07-16T11:04:53.746] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:04:55.475] [INFO] system - connected success!
+[2021-07-16T11:06:40.968] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:06:42.749] [INFO] system - connected success!
+[2021-07-16T11:07:50.259] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:07:52.040] [INFO] system - connected success!
+[2021-07-16T11:10:49.152] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:10:50.944] [INFO] system - connected success!
+[2021-07-16T11:11:00.914] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:11:02.886] [INFO] system - connected success!
+[2021-07-16T11:37:32.797] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:37:34.505] [INFO] system - connected success!
+[2021-07-16T11:39:05.186] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:39:07.057] [INFO] system - connected success!
+[2021-07-16T11:48:48.742] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:48:50.432] [INFO] system - connected success!
+[2021-07-16T11:50:31.852] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:50:33.667] [INFO] system - connected success!
+[2021-07-16T11:51:47.094] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:51:48.743] [INFO] system - connected success!
+[2021-07-16T11:55:53.132] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:55:54.813] [INFO] system - connected success!
+[2021-07-16T11:58:18.817] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:58:20.577] [INFO] system - connected success!
+[2021-07-16T11:59:00.623] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:59:02.378] [INFO] system - connected success!
+[2021-07-16T11:59:41.655] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T11:59:43.399] [INFO] system - connected success!
+[2021-07-16T12:04:32.537] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T12:04:34.231] [INFO] system - connected success!
+[2021-07-16T12:06:12.302] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"manage","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-16T12:06:13.975] [INFO] system - connected success!

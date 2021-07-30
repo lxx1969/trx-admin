@@ -1,0 +1,2 @@
+[2021-07-28T15:49:40.612] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"trx","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-07-28T15:49:53.748] [INFO] system - connected success!

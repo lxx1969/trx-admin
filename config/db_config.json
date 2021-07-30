@@ -1,0 +1,20 @@
+{
+  "mysql": {
+    "host": "localhost",
+    "user": "root",
+    "password": "123456",
+    "database": "trx",
+    "port": 3306,
+    "connectionLimit": 50,
+    "acquireTimeout": 10000,
+    "charset": "utf8",
+    "db_prefix": "bs_"
+  },
+  "fairgame":{
+    "host": "localhost",
+    "port": "3306",
+    "user": "root",
+    "password": "123456",
+    "database": "fairgame"
+  }
+}
