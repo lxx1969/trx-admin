@@ -1,0 +1,12 @@
+[2021-08-02T15:20:34.027] [INFO] system - mysql config  {"host":"192.168.100.200","user":"cryptoguess","password":"EDNbjMaxShdaefnC","database":"cryptoguess","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-08-02T15:20:37.523] [INFO] system - connected success!
+[2021-08-02T15:27:12.542] [INFO] system - mysql config  {"host":"192.168.100.200","user":"cryptoguess","password":"EDNbjMaxShdaefnC","database":"cryptoguess","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-08-02T15:27:13.976] [INFO] system - connected success!
+[2021-08-02T15:37:56.157] [INFO] system - mysql config  {"host":"192.168.100.200","user":"cryptoguess","password":"EDNbjMaxShdaefnC","database":"cryptoguess","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-08-02T15:37:57.539] [INFO] system - connected success!
+[2021-08-02T15:44:19.773] [INFO] system - mysql config  {"host":"192.168.100.200","user":"cryptoguess","password":"EDNbjMaxShdaefnC","database":"cryptoguess","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-08-02T15:44:21.460] [INFO] system - connected success!
+[2021-08-02T16:09:19.897] [INFO] system - mysql config  {"host":"192.168.100.200","user":"cryptoguess","password":"EDNbjMaxShdaefnC","database":"cryptoguess","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-08-02T16:09:24.511] [INFO] system - connected success!
+[2021-08-02T16:18:51.128] [INFO] system - mysql config  {"host":"192.168.100.200","user":"cryptoguess","password":"EDNbjMaxShdaefnC","database":"cryptoguess","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-08-02T16:18:52.532] [INFO] system - connected success!
