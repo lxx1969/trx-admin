@@ -1,13 +1,13 @@
 version: '3'
 
 services:
-  manage:
+  trxmanage:
     environment:
       - NODE_ENV=production
-    image: fair/fairgame-manage:latest
+    image: fair/trx-fairgame-manage:latest
     volumes:
       - /home/static:/usr/src/app/public/images
-    container_name: manage
+    container_name: trxmanage
     restart: always
     ports:
       - "4000:4000"
