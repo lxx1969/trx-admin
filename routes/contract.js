@@ -122,10 +122,10 @@ router.post('/settlementList', async (req, res) => {
             contract_address
         } = req.body;
 
-        let sql = `select title，game_detail from game where game_id = '${game_id}'`
+        let sql = `select game_detail from game where game_id = '${game_id}'`
         let data = await mysql.query(sql)
 
-        if (!(data[0].game_detail) || (data.length == 0)||!(data[0].tittle)) {
+        if (!(data[0].game_detail) || (data.length == 0)) {
             res.json({
                 code: 200,
                 data: []
@@ -138,23 +138,6 @@ router.post('/settlementList', async (req, res) => {
         let gameState = await fairGame.getState().call()
         let game_detail = JSON.parse(data[0].game_detail)
 
-
-        for (let j = 0; j < length; j++) {
-            let tittle = JSON.parse(data[0].title)
-
-            let bet = await fairGame.getBeted(address, j).call();
-
-            let modulo = await tronWeb1.toBigNumber(bet.modulo._hex).toNumber()
-            let betAmount = await tronWeb1.toBigNumber(bet.betAmount._hex).toNumber()
-            let mul = (await tronWeb1.toBigNumber(bet.mul._hex).toNumber()) / 100
-
-            let betName
-            if (moduloList.list[modulo - 1].team == "red") {
-                betName = "" + tittle.red + " " + moduloList.list[modulo - 1].betName
-            } else {
-                betName = "" + tittle.blue + " " + moduloList.list[modulo - 1].betName
-            } //todo:hardcode
-}
         await detailCheck(gameState[3], game_detail)
 
         res.json({
