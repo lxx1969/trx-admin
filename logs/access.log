@@ -1,2 +1,4 @@
 [2021-08-03T10:06:36.040] [INFO] system - mysql config  {"host":"localhost","user":"root","password":"123456","database":"trx","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
 [2021-08-03T10:06:39.284] [INFO] system - connected success!
+[2021-08-09T16:50:55.716] [INFO] system - mysql config  {"host":"192.168.100.200","user":"cryptoguess","password":"EDNbjMaxShdaefnC","database":"cryptoguess","port":3306,"connectionLimit":50,"acquireTimeout":10000,"charset":"utf8","db_prefix":"bs_"}
+[2021-08-09T16:50:56.858] [INFO] system - connected success!
