@@ -12,7 +12,7 @@ router.post('/getGameList', async (req, res) => {
       size
     } = req.body;
     let sql =
-      "SELECT t.game_name,g.title,g.min_chip,g.max_chip,g.is_show,g.type_game_id,g.game_id,g.end_time,g.is_squad,g.max_bet,g.min_bet,g.game_detail,g.clear_time,g.is_auto_pass,g.clear_block from game as g join type_game_list as t on t.type_game_id = g.type_game_id where 1=1";
+      "SELECT t.game_name,g.title,g.min_chip,g.max_chip,g.is_show,g.type_game_id,g.game_id,g.end_time,g.is_squad,g.max_bet,g.min_bet,g.game_detail,g.clear_time,g.is_auto_pass,g.clear_time from game as g join type_game_list as t on t.type_game_id = g.type_game_id where 1=1";
     let totalSql = 'select count(*) as total from game where 1=1';
     let str = ""
     if (gameName) {
