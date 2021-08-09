@@ -4,14 +4,13 @@ const tronWeb = new TronWeb({
     // headers: { "TRON-PRO-API-KEY": 'your api key' },
     // privateKey: 'your private key'
 })
-const connection = require("../sqlConfig/connection");
-
+const mysql = require('../plugins/mysql');
 const logger = require('./log')
 
 exports.getBlockNumber = async function () {
     try {
         const sql = "select value from dictionary where `key` = 'configuration' "
-        let result = await connection.select(sql)
+        let result = await mysql.query(sql)
 
         if (result[0]) {
             result = JSON.parse(result[0].value)
@@ -32,7 +31,7 @@ exports.getBlockNumber = async function () {
 exports.getTimestamp = async function () {
     try {
         const sql = "select value from dictionary where `key` = 'configuration' "
-        let result = await connection.select(sql)
+        let result = await mysql.query(sql)
 
         if (result[0]) {
             result = JSON.parse(result[0].value)
@@ -54,7 +53,7 @@ exports.updateBlock = async function () {
     try {
         const sql = "select value from dictionary where `key` = 'configuration' "
         
-        let result = await connection.select(sql)
+        let result = await mysql.query(sql)
         if (result[0]) {
             result = JSON.parse(result[0].value)
 
@@ -65,7 +64,7 @@ exports.updateBlock = async function () {
             result = JSON.stringify(result)
 
             const update = `update dictionary set value = '${result}' where` + '`key`' + ` = 'configuration'`
-            await connection.select(update,result)
+            await mysql.query(update,result)
 
         }else throw new Error("更新区块失败  updateBlock")
 
