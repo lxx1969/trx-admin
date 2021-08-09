@@ -5,7 +5,6 @@ const tronWeb = new TronWeb({
     // privateKey: 'your private key'
 })
 const mysql = require('../plugins/mysql');
-const logger = require('./log')
 
 exports.getBlockNumber = async function () {
     try {
@@ -23,7 +22,7 @@ exports.getBlockNumber = async function () {
 
         return result
     } catch (e) {
-        logger.error("method.getBlock ------------" + e)
+        console.error("method.getBlock ------------" + e)
         return false
     }
 }
@@ -44,7 +43,7 @@ exports.getTimestamp = async function () {
 
         return result
     } catch (e) {
-        logger.error("method.getBlock ------------" + e)
+        console.error("method.getBlock ------------" + e)
         return false
     }
 }
@@ -70,7 +69,7 @@ exports.updateBlock = async function () {
 
         return result
     } catch (e) {
-        logger.error("method.isAddress ------------" + e)
+        console.error("method.isAddress ------------" + e)
         return false
     }
 }
@@ -82,7 +81,7 @@ exports.isAddress = async function (address) {
         let result = tronWeb.isAddress(address)
         return result
     } catch (e) {
-        logger.error("method.isAddress ------------" + e)
+        console.error("method.isAddress ------------" + e)
         return false
     }
 }
