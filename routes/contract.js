@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const mysql = require('../plugins/mysql');
+var method = require('../plugins/method')
 
 const TronWeb = require('tronweb')
 const tronWeb = new TronWeb({
@@ -19,7 +20,7 @@ router.post('/getContractList', async (req, res) => {
             page,
             size
         } = req.body;
-        let sql = "SELECT t.game_name,c.contract_address,c.end_block,c.last_result,c.state,c.is_show as contract_is_show,c.pass_lock,g.title,g.is_show,g.type_game_id,g.game_id,g.end_time,g.end_block,g.is_auto_pass,g.clear_block from (game as g join contract_list as c on c.game_id = g.game_id) INNER JOIN type_game_list as t on t.type_game_id = g.type_game_id where 1=1"
+        let sql = "SELECT t.game_name,c.contract_address,c.end_block as contract_time,c.last_result,c.state,c.is_show as contract_is_show,c.pass_lock,g.title,g.is_show,g.type_game_id,g.game_id,g.end_time,g.end_block,g.is_auto_pass,g.clear_block from (game as g join contract_list as c on c.game_id = g.game_id) INNER JOIN type_game_list as t on t.type_game_id = g.type_game_id where 1=1"
         let str = ""
         if (state) {
             str += ` and c.state ='${state}'`;
@@ -37,15 +38,21 @@ router.post('/getContractList', async (req, res) => {
             sql += ` order by g.game_id desc limit ${(parseInt(page) - 1) * parseInt(size)},${parseInt(size)}`;
         }
 
+        let currentBlock = await methods.getBlockNumber()
+        let timestamp = await methods.getTimestamp()
+
         let data = await mysql.query(sql);
 
         for (let i = 0; i < data.length; i++) {
             data[i].title = JSON.parse(data[i].title)
-            try{
-            const fairGame = await tronWeb.contract().at(data[i].contract_address);
-            let pause = await fairGame.pause().call()
-            data[i].is_pause = pause
-            }catch(e){
+            if (data[i].contract_time) {
+                data[i].contract_time = (data[i].contract_time - currentBlock) * 3 + timestamp
+              }
+            try {
+                const fairGame = await tronWeb.contract().at(data[i].contract_address);
+                let pause = await fairGame.pause().call()
+                data[i].is_pause = pause
+            } catch (e) {
                 continue
             }
         }
@@ -134,7 +141,7 @@ router.post('/settlementList', async (req, res) => {
         }
 
         const fairGame = await tronWeb.contract().at(contract_address);
-        
+
         let gameState = await fairGame.getState().call()
         let game_detail = JSON.parse(data[0].game_detail)
 
@@ -144,8 +151,7 @@ router.post('/settlementList', async (req, res) => {
             code: 200,
             data: game_detail
         });
-    }
-    catch (el) {
+    } catch (el) {
         console.error(el)
         res.json({
             code: 404,
