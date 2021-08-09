@@ -38,8 +38,8 @@ router.post('/getContractList', async (req, res) => {
             sql += ` order by g.game_id desc limit ${(parseInt(page) - 1) * parseInt(size)},${parseInt(size)}`;
         }
 
-        let currentBlock = await methods.getBlockNumber()
-        let timestamp = await methods.getTimestamp()
+        let currentBlock = await method.getBlockNumber()
+        let timestamp = await method.getTimestamp()
 
         let data = await mysql.query(sql);
 
