@@ -20,7 +20,7 @@ router.post('/getContractList', async (req, res) => {
             page,
             size
         } = req.body;
-        let sql = "SELECT t.game_name,c.contract_address,c.end_block as contract_time,c.last_result,c.state,c.is_show as contract_is_show,c.pass_lock,g.title,g.is_show,g.type_game_id,g.game_id,g.end_time,g.end_block,g.is_auto_pass,g.clear_block from (game as g join contract_list as c on c.game_id = g.game_id) INNER JOIN type_game_list as t on t.type_game_id = g.type_game_id where 1=1"
+        let sql = "SELECT t.game_name,c.contract_address,c.end_block as contract_time,c.last_result,c.state,c.is_show as contract_is_show,c.pass_lock,g.title,g.is_show,g.type_game_id,g.game_id,g.end_time,g.is_auto_pass,g.clear_time from (game as g join contract_list as c on c.game_id = g.game_id) INNER JOIN type_game_list as t on t.type_game_id = g.type_game_id where 1=1"
         let str = ""
         if (state) {
             str += ` and c.state ='${state}'`;

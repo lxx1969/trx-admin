@@ -12,7 +12,7 @@ router.post('/getGameList', async (req, res) => {
       size
     } = req.body;
     let sql =
-      "SELECT t.game_name,g.title,g.min_chip,g.max_chip,g.is_show,g.type_game_id,g.game_id,g.end_time,g.is_squad,g.max_bet,g.min_bet,g.game_detail,g.end_block,g.is_auto_pass,g.clear_block from game as g join type_game_list as t on t.type_game_id = g.type_game_id where 1=1";
+      "SELECT t.game_name,g.title,g.min_chip,g.max_chip,g.is_show,g.type_game_id,g.game_id,g.end_time,g.is_squad,g.max_bet,g.min_bet,g.game_detail,g.clear_time,g.is_auto_pass,g.clear_block from game as g join type_game_list as t on t.type_game_id = g.type_game_id where 1=1";
     let totalSql = 'select count(*) as total from game where 1=1';
     let str = ""
     if (gameName) {
@@ -94,9 +94,8 @@ router.post('/addGameList', async (req, res) => {
       max_bet,
       min_bet,
       game_detail,
-      end_block,
       is_auto_pass,
-      clear_block,
+      clear_time,
       is_squad
     } = req.body;
 if(is_squad){
@@ -112,7 +111,7 @@ if(is_squad){
       end_time = end_time / 1000;
     }
     let sql =
-      `INSERT INTO game(title,min_chip,max_chip,type_game_id,is_show,end_time,max_bet,min_bet,game_detail,end_block,is_auto_pass,clear_block,is_squad) VALUES('${title}',${min_chip},${max_chip},${type_game_id},${is_show},${end_time},${max_bet},${min_bet},'${game_detail}',${end_block},${is_auto_pass},${clear_block},${is_squad})`;
+      `INSERT INTO game(title,min_chip,max_chip,type_game_id,is_show,end_time,max_bet,min_bet,game_detail,is_auto_pass,clear_time,is_squad) VALUES('${title}',${min_chip},${max_chip},${type_game_id},${is_show},${end_time},${max_bet},${min_bet},'${game_detail}',${is_auto_pass},${clear_time},${is_squad})`;
 
     await mysql.query(sql);
 
@@ -142,9 +141,8 @@ router.post('/editGameList', async (req, res) => {
       max_bet,
       min_bet,
       game_detail,
-      end_block,
       is_auto_pass,
-      clear_block,
+      clear_time,
       is_squad
     } = req.body;
     let pre = `update game set `;
@@ -183,14 +181,13 @@ router.post('/editGameList', async (req, res) => {
       game_detail = JSON.stringify(game_detail)
       str += `  game_detail = '${game_detail}',`;
     }
-    if (end_block) {
-      str += `  end_block = '${end_block}',`;
-    }
     if (is_auto_pass) {
       str += `  is_auto_pass = '${is_auto_pass}',`;
     }
-    if (clear_block) {
-      str += `  clear_block = '${clear_block}',`;
+    if (clear_time) {
+      let temp = new String(clear_time)
+      if (temp.length >= 12) clear_time = clear_time / 1000
+      str += `  clear_time = '${clear_time}',`;
     }
 
     if (str != "") {
