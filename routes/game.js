@@ -110,6 +110,9 @@ if(is_squad){
     if (end_time) {
       end_time = end_time / 1000;
     }
+    if (clear_time) {
+      clear_time = clear_time / 1000;
+    }
     let sql =
       `INSERT INTO game(title,min_chip,max_chip,type_game_id,is_show,end_time,max_bet,min_bet,game_detail,is_auto_pass,clear_time,is_squad) VALUES('${title}',${min_chip},${max_chip},${type_game_id},${is_show},${end_time},${max_bet},${min_bet},'${game_detail}',${is_auto_pass},${clear_time},${is_squad})`;
 
